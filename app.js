@@ -12,6 +12,7 @@ const game = {
     do {
       this.prevGuesses.push(this.getGuess())
       console.log(this.prevGuesses)
+      this.render()
     } while (this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum) 
       
   } ,
@@ -27,15 +28,13 @@ const game = {
   },
 
   render: function(){
-    // if(this.getGuess < this.secretNum){
-    //         return alert('Guessed too low!')
-    //          prevGuesses.push
-    //       } else if(this.getGuess > this.secretNum){
-    //         return alert('Guessed too high!')
-    //          this.prevGuesses.push
-    //       } else if(this.getGuess === this.secretNum){
-    //         return alert('Congrats! You did it! You made ' + this.prevGuesses.length + 'guesses!')
-    //       } else {null}
+    if(this.prevGuesses[this.prevGuesses.length -1] < this.secretNum){
+    alert(`Guessed too low! Your previous guesses were ${this.prevGuesses}`)
+    } else if(this.prevGuesses[this.prevGuesses.length -1] > this.secretNum){
+    alert(`Guessed too high! Your previous guesses were ${this.prevGuesses}`)
+    } else {
+    alert(`Congrats! You did it! You made ${this.prevGuesses.length} guesses!`)
+    }
     
   }
 
